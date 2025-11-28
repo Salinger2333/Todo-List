@@ -1,9 +1,9 @@
-import { storage } from '../utils/storage.js';
+import { ProjectController } from '../logic/ProjectController.js';
 import { createTodoItem } from './todo-item.js';
 
 
 function board(todos) {
-    const todoList = storage().getTodoList('default')
+    const todoList = ProjectController().getTodoList('default')
     console.log(todoList)
     const content = document.querySelector('.content')
     todoList.forEach((todo) => {

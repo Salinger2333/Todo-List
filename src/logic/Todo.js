@@ -8,6 +8,7 @@ const Todo = function ({ title, description, dueDate = new Date(), priority = 4 
         dueDate,
         priority,
         uid,
+        isComplete,
         toggleComplete
     }
 }

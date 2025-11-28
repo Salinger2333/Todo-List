@@ -1,11 +1,15 @@
+import { storage } from "../utils/storage"
+
 class Project {
     todos = []
-    static projectList = []
     constructor(name = 'default') {
         this.name = name
     }
     getName = () => this.name
-    setName = (newName) => this.name = newName
+    setName = (newName) => {
+        this.name = newName
+        storage().saveInStorage()
+    }
     getProject = () => {
         return {
             name: this.name,
@@ -13,13 +17,16 @@ class Project {
         }
     }
 
-    addTodo = (todo) => this.todos.push(todo)
     getTodo = (uid) => this.todos.find((todo) => todo.uid === uid)
     getAllTodos = () => { return [...this.todos] }
-    removeTodo = (uid) => this.todos.filters((todo) => todo.uid !== uid)
+    addTodo = (todo) => {
+        this.todos.push(todo)
+        storage().saveInStorage()
+    }
 
-    static addNewProject = (name) => {
-        this.projectList.push(name)
+    removeTodo = (uid) => {
+        this.todos.filter((todo) => todo.uid !== uid)
+        storage().saveInStorage()
     }
 }
 

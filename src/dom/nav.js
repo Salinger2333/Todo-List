@@ -1,12 +1,14 @@
-import { storage } from "../utils/storage.js"
+import { ProjectController } from "../logic/ProjectController.js"
+
 
 function nav() {
-    const nameList = storage().getNameList()
+    const nameList = ProjectController().getNameList()
     const nav = document.querySelector('nav')
     nameList.forEach((name) => {
         const div = document.createElement('div')
         div.textContent = name
         div.classList.add('project-name')
+        div.id = name
         nav.append(div)
     })
 }
