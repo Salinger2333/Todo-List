@@ -10,7 +10,33 @@
 <body>
 
     <div class="contaienr">
-        <nav></nav>
+        <nav>
+            <div class="create-todo">添加任务</div>
+            <dialog>
+                <form class="add-todo-form">
+                    <div class="new-todo-row">
+                        <input type="text" placeholder="input title">
+                    </div>
+                    <div class="new-todo-row">
+                        <input type="text" placeholder="input description">
+                    </div>
+                    <div class="new-todo-row">
+                        <input type="date">
+                    </div>
+                    <div class="new-todo-row">
+                        <select name="priority" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="new-todo-row">
+                        <button type="submit" id="subBtn">submit</button>
+                    </div>
+                </form>
+            </dialog>
+        </nav>
         <div class="content"></div>
     </div>
     <script type="module" src="./index.js"></script>

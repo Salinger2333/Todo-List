@@ -4,10 +4,8 @@ class Project {
     constructor(name = 'default') {
         this.name = name
     }
-    getName = () => name
+    getName = () => this.name
     setName = (newName) => this.name = newName
-    addNewTodo = (todo) => this.todos.push(todo)
-    getTodos = () => this.todos
     getProject = () => {
         return {
             name: this.name,
@@ -15,10 +13,14 @@ class Project {
         }
     }
 
+    addTodo = (todo) => this.todos.push(todo)
+    getTodo = (uid) => this.todos.find((todo) => todo.uid === uid)
+    getAllTodos = () => { return [...this.todos] }
+    removeTodo = (uid) => this.todos.filters((todo) => todo.uid !== uid)
+
     static addNewProject = (name) => {
         this.projectList.push(name)
     }
-    static
 }
 
 export { Project }
