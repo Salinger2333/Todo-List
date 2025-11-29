@@ -8,7 +8,6 @@ function board(todos) {
     const content = document.querySelector('.content')
     todoList.forEach((todo) => {
         const todoItem = createTodoItem(todo)
-        todoItem.classList.add('todo')
         content.append(todoItem)
     })
 }

@@ -1,3 +1,8 @@
-export { nav } from './nav.js'
-export { board } from './board.js'
-export { createTodoItem } from './todo-item.js'
+import { nav } from './nav.js'
+import { board } from './board.js'
+
+const init = function () {
+    nav()
+    board()
+}
+export { init }

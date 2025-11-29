@@ -1,9 +1,8 @@
 import { format } from 'date-fns';
 import { Project } from './logic/Project.js';
 import { Todo } from './logic/Todo.js';
-import * as dom from './dom/dom.js';
+import { init } from './dom/dom.js';
 import './style.css';
-import { storage } from './utils/storage.js';
 import { ProjectController } from './logic/ProjectController.js';
 
 // // create a project
@@ -25,11 +24,10 @@ import { ProjectController } from './logic/ProjectController.js';
 // localStorage.setItem('todo', toDoJson)
 const dialog = document.querySelector('dialog')
 const newTodo = document.querySelector('.create-todo')
-newTodo.addEventListener('click',() => {
+newTodo.addEventListener('click', () => {
     dialog.showModal()
 })
-console.log(ProjectController().getNameList());
-dom.board()
-dom.nav()
+
+init()
 
 
