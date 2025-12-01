@@ -18,7 +18,6 @@ function sidebar() {
         if (e.target.classList.contains('project-name')) {
             const projectUid = e.target.id
             ProjectManager.switchCurProject(projectUid)
-            console.log(ProjectManager.getCurProject())
             board()
         }
     })
