@@ -4,30 +4,25 @@ import { Todo } from './logic/Todo.js';
 import { init } from './dom/dom.js';
 import './style.css';
 import { ProjectController } from './logic/ProjectController.js';
+import { storage } from './utils/storage.js';
 
-// // create a project
-// const firstProject = new Project('default')
-// const secoundProject = new Project('Book to read')
-// // create a todo
-// const firstTodo = Todo({ title: "1", description: "..." })
-// const secondTodo = Todo({ title: "2", description: "..." })
-// const thridTodo = Todo({ title: "3", description: "..." })
-// const fourthTodo = Todo({ title: "4", description: "..." })
-// firstProject.addTodo(firstTodo)
-// firstProject.addTodo(secondTodo)
-
-// secoundProject.addTodo(thridTodo)
-// secoundProject.addTodo(fourthTodo)
-
-// const toDoObj = { project: [firstProject.getProject(), secoundProject.getProject()] }
-// const toDoJson = JSON.stringify(toDoObj)
-// localStorage.setItem('todo', toDoJson)
 const dialog = document.querySelector('dialog')
 const newTodo = document.querySelector('.create-todo')
 newTodo.addEventListener('click', () => {
     dialog.showModal()
 })
 
+const subBtn = document.querySelector('#subBtn')
+subBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    const title = document.querySelector('#title').value
+    const description = document.querySelector('#description').value
+    const dueDate = format(new Date(document.querySelector('#date').value), 'yyyy-MM-dd')
+    const priority = document.querySelector('#priority').value
+    const todo = new Todo({ title, description, dueDate, priority })
+    
+        dialog.close()
+})
 init()
 
 

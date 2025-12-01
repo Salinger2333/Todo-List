@@ -16,16 +16,20 @@
             <dialog>
                 <form class="add-todo-form">
                     <div class="new-todo-row">
-                        <input type="text" placeholder="input title">
+                        <label for="title"></label>
+                        <input id="title" type="text" placeholder="input title">
                     </div>
                     <div class="new-todo-row">
-                        <input type="text" placeholder="input description">
+                        <label for="description"></label>
+                        <textarea id="description" type="text" placeholder="input description"></textarea>
                     </div>
                     <div class="new-todo-row">
-                        <input type="date">
+                        <label for="date"></label>
+                        <input id="date" type="date">
                     </div>
                     <div class="new-todo-row">
-                        <select name="priority" id="">
+                        <label for="priority"></label>
+                        <select id="priority" name="priority" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -41,6 +45,6 @@
         <div class="content"></div>
     </div>
     <script type="module" src="./index.js"></script>
-</body>
+</body> 
 
 </html>
