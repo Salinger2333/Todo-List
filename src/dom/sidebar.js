@@ -3,8 +3,10 @@ import { board } from "./board.js"
 
 
 function sidebar() {
+
     const projectList = ProjectManager.getAllProjects()
     const list = document.querySelector('.project-list')
+    list.replaceChildren()
     projectList.forEach((project) => {
         const div = document.createElement('div')
         div.textContent = project.name
