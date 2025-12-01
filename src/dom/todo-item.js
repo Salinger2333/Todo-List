@@ -38,6 +38,7 @@ function createTodoItem(todo) {
         event.preventDefault()
         const curProject = ProjectManager.getCurProject()
         curProject.removeTodo(todo.uid)
+        ProjectManager.save()
         board()
     })
     return div

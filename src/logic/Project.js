@@ -1,3 +1,4 @@
+import { ProjectManager } from "./ProjectManager"
 import { Todo } from "./Todo"
 
 class Project {
@@ -16,14 +17,17 @@ class Project {
     addTodo = (todo) => {
         const newTodo = new Todo(todo)
         this.todos.push(newTodo)
+        ProjectManager.save()
     }
     removeTodo = (toDoUid) => {
         this.todos = this.todos.filter((todo) => todo.uid !== toDoUid)
+        ProjectManager.save()
     }
     setTodo = (toDoUid, newDetail) => {
         const todoToEdit = this.getTodo(toDoUid)
         if (!todoToEdit) return
         Object.assign(todoToEdit, newDetail)
+        ProjectManager.save()
     }
 
 }

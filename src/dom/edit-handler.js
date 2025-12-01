@@ -28,6 +28,7 @@ function initEditModal() {
         };
 
         ProjectManager.getCurProject().setTodo(uid, newDetail);
+        ProjectManager.save();
         board();
         editDialog.close();
     });
