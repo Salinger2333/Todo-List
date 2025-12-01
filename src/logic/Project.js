@@ -1,3 +1,5 @@
+import { Todo } from "./Todo"
+
 class Project {
     todos = []
     uid = crypto.randomUUID()
@@ -12,10 +14,11 @@ class Project {
     getTodo = (toDoUid) => this.todos.find((todo) => todo.uid === toDoUid)
     getAllTodos = () => { return [...this.todos] }
     addTodo = (todo) => {
-        this.todos.push(todo)
+        const newTodo = new Todo(todo)
+        this.todos.push(newTodo)
     }
     removeTodo = (toDoUid) => {
-        this.todos.filter((todo) => todo.uid !== uid)
+        this.todos = this.todos.filter((todo) => todo.uid !== toDoUid)
     }
     setTodo = (toDoUid, newDetail) => {
         const todoToEdit = this.getTodo(toDoUid)
