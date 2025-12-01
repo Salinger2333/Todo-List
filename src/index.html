@@ -20,6 +20,35 @@
             <div class="todo-list"></div>
         </div>
     </div>
+    <dialog>
+        <form class="add-todo-form">
+            <div class="new-todo-row">
+                <label for="title"></label>
+                <input id="title" type="text" placeholder="input title">
+            </div>
+            <div class="new-todo-row">
+                <label for="description"></label>
+                <textarea id="description" type="text" placeholder="input description"></textarea>
+            </div>
+            <div class="new-todo-row">
+                <label for="date"></label>
+                <input id="date" type="date">
+            </div>
+            <div class="new-todo-row">
+                <label for="priority"></label>
+                <select id="priority" name="priority" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="new-todo-row">
+                <button type="submit" id="subBtn">submit</button>
+                <button  id="cancelBtn">cancel</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 
 </html>
