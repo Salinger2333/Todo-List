@@ -5,7 +5,7 @@ class Project {
         this.name = name
     }
 
-    set name(newName) {
+    setName(newName) {
         this.name = newName
     }
 
