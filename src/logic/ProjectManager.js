@@ -1,3 +1,4 @@
+import { Project } from './Project.js'
 const ProjectController = (function () {
     let projects = []
     let curProject = projects[0]
@@ -9,8 +10,11 @@ const ProjectController = (function () {
     const getProject = (uid) => {
         return projects.find((project) => project.uid === uid)
     }
-    const addProject = (project) => {
-        projects.push(project)
+    const getAllProjects = () => {
+        return [...projects]
+    }
+    const addProject = (name) => {
+        projects.push(new Project(name))
     }
     const removeProject = (uid) => {
         projects = projects.filter((project) => project.uid !== uid)
@@ -27,6 +31,7 @@ const ProjectController = (function () {
         getCurProject,
         switchCurProject,
         getProject,
+        getAllProjects,
         getNameList,
         addProject,
         removeProject
