@@ -4,9 +4,8 @@ class Todo {
         this.description = description
         this.dueDate = dueDate
         this.priority = priority
-        this.uid = crypto.randomUUID()
-        this.isComplete = false
     }
+    uid = crypto.randomUUID()
     isComplete = false
     toggleComplete = () => isComplete = !isComplete
 }
