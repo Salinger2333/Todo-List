@@ -14,7 +14,11 @@ const ProjectManager = (function () {
         return [...projects]
     }
     const addProject = (name) => {
-        projects.push(new Project(name))
+        const newProject = new Project(name)
+        projects.push(newProject)
+        if (!curProject) {
+            curProject = newProject
+        }
     }
     const removeProject = (uid) => {
         projects = projects.filter((project) => project.uid !== uid)
