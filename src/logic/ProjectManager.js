@@ -1,5 +1,5 @@
 import { Project } from './Project.js'
-const ProjectController = (function () {
+const ProjectManager = (function () {
     let projects = []
     let curProject = projects[0]
     // 渲染在dom上
@@ -38,4 +38,4 @@ const ProjectController = (function () {
     }
 })()
 
-export { ProjectController }
+export { ProjectManager }
